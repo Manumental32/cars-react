@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Button, Container, TextField } from '@mui/material';
 import CarService from '../services/CarService';
+import OwnerService from '../services/OwnerService';
 
 export default function CarForm() {
+  const [owners, setOwners] = useState(null);
+  useEffect(() => {
+    getInitialData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const getInitialData = async () => {
+    try {
+      const response = await OwnerService.getOwners();
+      setOwners(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const initialValuesForm = {
     brand: '',
     model: '',
     licensePlate: '',
     color: '',
+    owner: '',
   };
 
   const schemaForm = Yup.object().shape({
@@ -28,6 +45,12 @@ export default function CarForm() {
     }
   };
 
+  const handlerOnChangeOwnerSelect = (e, setFieldValue) => {
+    const ownerIdSelected = e.target.value;
+    const ownerSelected = owners.find((owner) => (owner.id = ownerIdSelected));
+    setFieldValue('owner', ownerSelected);
+  };
+
   return (
     <>
       <Formik
@@ -43,6 +66,7 @@ export default function CarForm() {
             handleChange,
             handleBlur,
             handleSubmit,
+            setFieldValue,
           } = props;
           return (
             <Form noValidate onSubmit={handleSubmit} autoComplete='off'>
@@ -109,6 +133,31 @@ export default function CarForm() {
                   error={errors.color && touched.color}
                   helperText={errors.color && touched.color ? errors.color : ''}
                 />
+                <TextField
+                  variant='standard'
+                  fullWidth
+                  label='Propietario'
+                  placeholder='Propietario'
+                  id='owner'
+                  name='owner'
+                  autoComplete='owner'
+                  value={values.owner}
+                  onChange={(e) => handlerOnChangeOwnerSelect(e, setFieldValue)}
+                  onBlur={handleBlur}
+                  error={errors.owner && touched.owner}
+                  helperText={errors.owner && touched.owner ? errors.owner : ''}
+                  SelectProps={{
+                    native: true,
+                  }}
+                  select={true}
+                >
+                  {owners &&
+                    owners.map((option, key) => (
+                      <option value={option.id} key={key}>
+                        {option.firstname}
+                      </option>
+                    ))}
+                </TextField>
                 <Button onClick={handleSubmit}>Guardar</Button>
               </Container>
             </Form>

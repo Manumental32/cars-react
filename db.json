@@ -9,6 +9,11 @@
       "id": 2,
       "firstname": "Andres",
       "lastname": "Tarrio"
+    },
+    {
+      "firstname": "nn",
+      "lastname": "nnn",
+      "id": 3
     }
   ],
   "cars": [
@@ -97,13 +102,6 @@
           "date": "2012-04-23T18:25:43.511Z"
         }
       ]
-    },
-    {
-      "brand": "12321",
-      "model": "21321",
-      "licensePlate": "12321",
-      "color": "123",
-      "id": 3
     }
   ],
   "services": [
