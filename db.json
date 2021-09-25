@@ -1,0 +1,136 @@
+{
+  "owners": [
+    {
+      "id": 1,
+      "firstname": "Manuel",
+      "lastname": "Aquino"
+    },
+    {
+      "id": 2,
+      "firstname": "Andres",
+      "lastname": "Tarrio"
+    }
+  ],
+  "cars": [
+    {
+      "id": 1,
+      "brand": "Peugeot",
+      "model": "208",
+      "licensePlate": "GWX940",
+      "color": "Azul",
+      "owner": {
+        "id": 1,
+        "firstname": "Manuel",
+        "lastname": "Aquino"
+      },
+      "transactions": [
+        {
+          "id": 1,
+          "services": [
+            {
+              "id": 1,
+              "name": "Cambio de aceite",
+              "cost": 100
+            },
+            {
+              "id": 2,
+              "name": "Cambio de filtro",
+              "cost": 200
+            }
+          ],
+          "total": 300,
+          "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+          "id": 2,
+          "services": [
+            {
+              "id": 2,
+              "name": "Cambio de filtro",
+              "cost": 200
+            },
+            {
+              "id": 3,
+              "name": "Cambio de correa",
+              "cost": 300
+            }
+          ],
+          "total": 500,
+          "date": "2012-04-23T18:25:43.511Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "brand": "Citroen",
+      "model": "C4",
+      "licensePlate": "AAA340",
+      "color": "Verde",
+      "owner": {
+        "id": 2,
+        "firstname": "Andres",
+        "lastname": "Tarrio"
+      },
+      "transactions": [
+        {
+          "id": 1,
+          "services": [
+            {
+              "id": 2,
+              "name": "Cambio de filtro",
+              "cost": 200
+            }
+          ],
+          "total": 200,
+          "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+          "id": 2,
+          "services": [
+            {
+              "id": 3,
+              "name": "Cambio de correa",
+              "cost": 300
+            }
+          ],
+          "total": 300,
+          "date": "2012-04-23T18:25:43.511Z"
+        }
+      ]
+    },
+    {
+      "brand": "12321",
+      "model": "21321",
+      "licensePlate": "12321",
+      "color": "123",
+      "id": 3
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Cambio de aceite",
+      "cost": 100
+    },
+    {
+      "id": 2,
+      "name": "Cambio de filtro",
+      "cost": 200
+    },
+    {
+      "id": 3,
+      "name": "Cambio de correa",
+      "cost": 300
+    },
+    {
+      "id": 4,
+      "name": "Revisión general",
+      "cost": 400
+    },
+    {
+      "id": 5,
+      "name": "Otro",
+      "cost": 500
+    }
+  ]
+}
