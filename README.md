@@ -1,3 +1,14 @@
+challenge Pickit WIP
+
+Formik 
+Material-ui
+Json serve para la api, va guardando en db.json
+
+
+Ver instrucciones aca:
+https://drive.google.com/file/d/1FVWHPtkozl4tPAWvz4xNls0BDxyyZRZE/view?usp=sharing
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

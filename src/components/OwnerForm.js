@@ -3,8 +3,10 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Button, Container, TextField } from '@mui/material';
 import OwnerService from '../services/OwnerService';
+import { useHistory } from 'react-router';
 
 export default function OwnerForm() {
+  const history = useHistory();
   const initialValuesForm = {
     firstname: '',
     lastname: '',
@@ -18,6 +20,9 @@ export default function OwnerForm() {
   const onSubmitForm = async (values) => {
     try {
       const response = await OwnerService.createOwner(values);
+      if (response) {
+        history.push('/owners/');
+      }
       console.log(response);
     } catch (error) {
       console.error('Error:', error);
@@ -47,7 +52,7 @@ export default function OwnerForm() {
                 <TextField
                   variant='standard'
                   fullWidth
-                  label='Nombre'
+                  label='Nombre*'
                   placeholder='Nombre'
                   id='firstname'
                   name='firstname'
@@ -66,7 +71,7 @@ export default function OwnerForm() {
                 <TextField
                   variant='standard'
                   fullWidth
-                  label='Apellido'
+                  label='Apellido*'
                   placeholder='Apellido'
                   id='lastname'
                   name='lastname'

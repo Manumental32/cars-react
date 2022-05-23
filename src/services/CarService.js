@@ -1,11 +1,9 @@
 import axios from 'axios';
 
 const CARS_URL = '/cars/';
-const SERVICES_URL = '/services/';
-
 class CarService {
-  getCars = async () => {
-    return await axios.get(CARS_URL);
+  getCars = async (carId = '') => {
+    return await axios.get(CARS_URL + carId);
   };
   createCar = async (data) => {
     return await axios.post(CARS_URL, data);
@@ -15,10 +13,6 @@ class CarService {
   };
   deleteCar = async (id) => {
     return await axios.delete(CARS_URL + id);
-  };
-
-  getServices = async () => {
-    return await axios.get(SERVICES_URL);
   };
 }
 

@@ -1,21 +1,34 @@
 import Header from './components/Header';
-import { Container } from '@mui/material';
-import CarsTable from './components/CarsTable';
-import OwnersTable from './components/OwnersTable';
-import CarForm from './components/CarForm';
-import OwnerForm from './components/OwnerForm';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
+import { Container, CssBaseline } from '@mui/material';
+import OwnersContainer from './containers/OwnersContainer';
+import OwnerContainer from './containers/OwnerContainer';
+import CarsContainer from './containers/CarsContainer';
+import CarContainer from './containers/CarContainer';
 
 function App() {
   return (
-    <>
+    <Router>
+      <CssBaseline />
       <Header></Header>
-      <Container>
-        <OwnerForm></OwnerForm>
-        <CarForm></CarForm>
-        <CarsTable></CarsTable>
-        <OwnersTable></OwnersTable>
-      </Container>
-    </>
+      <Switch>
+        <Container>
+          {/* <Route exact path='/owners/:ownerid' component={OwnerContainer} /> */}
+          <Route exact path='/owners/new' component={OwnerContainer} />
+          <Route exact path='/owners' component={OwnersContainer} />
+          <Route exact path='/cars/:carId' component={CarContainer} />
+          <Route exact path='/cars' component={CarsContainer} />
+          <Route exact path='/'>
+            <Redirect to={`owners`} />
+          </Route>
+        </Container>
+      </Switch>
+    </Router>
   );
 }
 

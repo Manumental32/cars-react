@@ -14,20 +14,38 @@
       "firstname": "nn",
       "lastname": "nnn",
       "id": 3
+    },
+    {
+      "firstname": "nuevo",
+      "lastname": "nuevo apellido",
+      "id": 4
+    },
+    {
+      "firstname": "Martin",
+      "lastname": "Arin",
+      "id": 5
     }
   ],
   "cars": [
     {
-      "id": 1,
-      "brand": "Peugeot",
+      "brand": "Peugeot2",
       "model": "208",
       "licensePlate": "GWX940",
       "color": "Azul",
-      "owner": {
-        "id": 1,
-        "firstname": "Manuel",
-        "lastname": "Aquino"
-      },
+      "owners": [
+        {
+          "id": 2,
+          "firstname": "Andres",
+          "lastname": "Tarrio"
+        },
+        {
+          "id": 1,
+          "firstname": "Manuel",
+          "lastname": "Aquino"
+        }
+      ],
+      "services": [],
+      "id": 1,
       "transactions": [
         {
           "id": 1,
@@ -71,11 +89,13 @@
       "model": "C4",
       "licensePlate": "AAA340",
       "color": "Verde",
-      "owner": {
-        "id": 2,
-        "firstname": "Andres",
-        "lastname": "Tarrio"
-      },
+      "owners": [
+        {
+          "id": 1,
+          "firstname": "Manuel",
+          "lastname": "Aquino"
+        }
+      ],
       "transactions": [
         {
           "id": 1,
@@ -98,10 +118,23 @@
               "cost": 300
             }
           ],
-          "total": 300,
           "date": "2012-04-23T18:25:43.511Z"
         }
       ]
+    },
+    {
+      "brand": "aaa",
+      "model": "aaa",
+      "licensePlate": "aaa",
+      "color": "aa",
+      "owners": [
+        {
+          "id": 1,
+          "firstname": "Manuel",
+          "lastname": "Aquino"
+        }
+      ],
+      "id": 3
     }
   ],
   "services": [

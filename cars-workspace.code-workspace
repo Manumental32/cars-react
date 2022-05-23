@@ -8,6 +8,7 @@
 	  "javascript.updateImportsOnFileMove.enabled": "always",
 	  "explorer.confirmDelete": false,
 	  "explorer.confirmDragAndDrop": false,
+	  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
 	  "[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	  },
