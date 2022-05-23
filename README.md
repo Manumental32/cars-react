@@ -4,6 +4,12 @@ Formik
 Material-ui
 Json serve para la api, va guardando en db.json
 
+el puerto 3003 está seteado en el .env.local
+PORT=3003
+
+Correr con `yarn api-start` y `yarn start` y probar si andubo:
+http://localhost:3003/
+
 
 Ver instrucciones aca:
 https://drive.google.com/file/d/1FVWHPtkozl4tPAWvz4xNls0BDxyyZRZE/view?usp=sharing
